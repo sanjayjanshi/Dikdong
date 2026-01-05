@@ -1,0 +1,1375 @@
+
+:root {
+            /* Light Theme */
+            --primary: #1877f2;
+            --primary-dark: #0e5cbf;
+            --primary-light: #e7f3ff;
+            --secondary: #34c759;
+            --secondary-dark: #2aa44c;
+            --accent: #ff9500;
+            --accent-dark: #e67e00;
+            --text-primary: #1c1c1e;
+            --text-secondary: #606770;
+            --text-tertiary: #8e8e93;
+            --bg-primary: #fffcfa;
+            --bg-secondary: linear-gradient(135deg, #E3F2FD, #eaf5f8);
+            --bg-tertiary: #C9E1E8;
+            --bg-backbtn: linear-gradient(135deg, #E3F2FD, #e8f5e8);
+            --card-bg: linear-gradient(135deg, #E3F2FD, #E8F5E8);
+            --tool-bg: linear-gradient(135deg, #E0f6FD, #E5F5E8);
+            --blog-bg: linear-gradient(135deg, #E3F2FD, #E8F5E8);
+            --footer-bg: #f77e2d;
+            --modal-bg: linear-gradient(135deg, #e3f2fe, #e8f8ee);
+            --modalbc-bg: rgba(0, 0, 0, 0.6);
+            --legal-bg: #f5f5f5;
+            --header-bg: #fffcfa, 0.2;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --header-height: 60px;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --text-primary: #e4e6eb;
+            --text-secondary: #b0b3b8;
+            --text-tertiary: #8a8d91;
+            --bg-primary: #000000;
+            --bg-secondary: #000000;
+            --bg-tertiary: #242526;
+            --bg-backbtn: #2e3237;
+            --card-bg: #1e1e1e;
+            --tool-bg: linear-gradient(180deg, #1e1e1e, #100e14);
+            --blog-bg: linear-gradient(135deg, #0f172a, #1e293f);
+            --footer-bg: #0B0F12;
+            --modal-bg: linear-gradient(135deg, #1e1e1e, #1e1e1e);
+            --modalbc-bg: #000000, 0.2; 
+            --legal-bg: #000000;
+            --header-bg: #000000, 0.2; /* Adjust opacity for transparency */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.35);
+        }
+
+        /* Base Styles */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent; /* Remove blue tap highlight */
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition, color 1);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Remove blue highlight on buttons and interactive elements */
+        button, .course-card, .specialization-card, .semester-card, 
+        .subject-card, .blog-card, .tool-card, .back-button {
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        /* Header with Navigation */
+        /* Header with Navigation */
+        .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--header-bg); /* Adjust opacity for transparency */
+        
+        
+        backdrop-filter: blur(8px); /* Adds the blurry glass effect */
+        box-shadow: var(--shadow-sm);
+        padding: 0 16px;
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-subtext {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-left: 5px;
+            font-weight: 500;
+        }
+
+        .nav-container {
+            display: flex;
+             color: var(--text-primary);
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            padding: 20px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            margin-bottom: 24px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .welcome-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .welcome-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 24px 0 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Course Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .course-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .course-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .course-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .course-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .course-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+/* Blogs Section */
+        /* Blogs Section (updated for more attractive design) */
+        /* Blogs Section - Enhanced for Pharmacy Blogs */
+        /* Updated with research-backed color psychology: Blues for trust/security, greens for health/nature/curiosity. Gradients evoke happiness and professionalism. <grok:render card_id="53a722" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">1</argument>
+        </grok:render><grok:render card_id="8c0c0a" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">4</argument>
+        </grok:render><grok:render card_id="503221" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">60</argument>
+        </grok:render> */
+        .blogs-grid {
+        display: flex;
+        justify-content: center;
+        gap: 24px; /* Increased for better spacing per UI best practices <grok:render card_id="918541" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">41</argument>
+        </grok:render> */
+        margin-bottom: 32px;
+        flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        }
+        
+        .blog-card {
+        background: var(--blog-bg); /* Light blue to light green gradient for serenity, health, and nature themes <grok:render card_id="6d54dc" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">70</argument>
+        </grok:render><grok:render card_id="a5a4d2" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">71</argument>
+        </grok:render> */
+        border: 1px solid rgba(76, 175, 80, 0.25); /* Subtle green border for elevation and nature feel <grok:render card_id="ba6d81" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">45</argument>
+        </grok:render> */
+        border-radius: var(--radius-lg, 16px);
+        padding: 28px; /* More padding for breathing room and visual balance <grok:render card_id="633ec3" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.2)); /* Medium shadow for depth <grok:render card_id="f7393f" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">41</argument>
+        </grok:render> */
+        transition: var(--transition, all 0.3s ease), transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+        overflow: hidden;
+        max-width: 400px;
+        width: 100%;
+        height: 320px; /* Fixed height for consistency <grok:render card_id="079f10" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        font-family: system-ui, -apple-system, sans-serif; /* Clean, professional font for medical/educational content */
+        }
+        
+        .blog-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #1976D2, #4CAF50); /* Blue to green accent bar for trust and health <grok:render card_id="4919ea" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">1</argument>
+        </grok:render><grok:render card_id="03155e" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">60</argument>
+        </grok:render> */
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+        transform: translateY(-8px) scale(1.02); /* Enhanced lift and scale for engaging hover <grok:render card_id="4320fa" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        box-shadow: var(--shadow-lg, 0 8px 24px rgba(25, 118, 210, 0.15)); /* Blue-tinted glow for security/happiness <grok:render card_id="f44255" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">29</argument>
+        </grok:render> */
+        }
+        
+        .blog-card:hover::before {
+        transform: scaleX(1);
+        }
+        
+        .blog-icon {
+        font-size: 2.8rem; /* Larger for attraction, pharmacy-themed icon (e.g., pill or leaf for nature) */
+        margin-bottom: 8px;
+        color: #1976D2; /* Deep blue for trust <grok:render card_id="a1a99b" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">1</argument>
+        </grok:render> */
+        transition: color 0.3s ease;
+        }
+        
+        .blog-card:hover .blog-icon {
+        color: #4CAF50; /* Shift to green on hover for curiosity and nature <grok:render card_id="5c1d29" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">70</argument>
+        </grok:render> */
+        }
+        
+        .blog-name {
+        font-size: 1.3rem; /* Slightly larger for hierarchy <grok:render card_id="94b355" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        font-weight: 700;
+        color: var(--text-primary); /* Dark text for readability */
+        margin: 0;
+        line-height: 1.3;
+        }
+        
+        .blog-desc {
+        font-size: 0.95rem;
+        color: #666; /* Secondary text */
+        line-height: 1.5;
+        flex-grow: 1; /* Allow expansion */
+        }
+        
+        /* Enhanced badge with pulse for curiosity and "new" appeal */
+        .blog-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: linear-gradient(135deg, #4CAF50, #81C784); /* Green gradient for health/happiness <grok:render card_id="221aa2" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">71</argument>
+        </grok:render> */
+        
+        color: white;
+        padding: 6px 10px;
+        border-radius: var(--radius-sm, 8px);
+        font-size: 0.75rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+        animation: pulse 2s infinite; /* Subtle pulse to draw attention and evoke curiosity <grok:render card_id="f6db9b" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">29</argument>
+        </grok:render> */
+        }
+        
+        @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+        70% { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+        
+        /* New: Category tag for pharmacy topics, evoking educational curiosity */
+        .category-tag {
+        background: rgba(25, 118, 210, 0.1); /* Light blue for trust <grok:render card_id="7dde2a" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">1</argument>
+        border: 1px solid rgba(76, 175, 80, 0.25)
+        </grok:render> */
+        color: #1976D2;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        align-self: flex-start;
+        border: 1px solid rgba(25, 118, 210, 0.2);
+        }
+        
+        
+        /* Enhanced preview window with nature-inspired slide and better engagement */
+        .preview-window {
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent white for cleanliness <grok:render card_id="b209ef" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">70</argument>
+        </grok:render> */
+        
+        border-radius: var(--radius-md, 12px);
+        border: 1px solid rgba(76, 175, 80, 0.25)
+        padding: 12px;
+        box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.05));
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: var(--transition), background 0.3s ease;
+        width: 250px;
+        height: 75px;
+        overflow: hidden;
+        backdrop-filter: blur(10px); /* Subtle blur for modern, attractive feel <grok:render card_id="d3e937" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">43</argument>
+        </grok:render> */
+        }
+        
+        .preview-window:hover {
+        background: rgba(232, 245, 233, 0.9); /* Light green tint on hover for nature/happiness <grok:render card_id="a85736" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">71</argument>
+        </grok:render> */
+        border: 1px solid rgba(76, 175, 80, 0.25)
+        box-shadow: var(--shadow-md, 0 4px 12px rgba(76, 175, 80, 0.15));
+        }
+        
+        .image-container {
+        position: relative;
+        width: 100px;
+        height: 75px;
+        flex-shrink: 0;
+        }
+        
+        .preview-image {
+        width: 100px;
+        height: 75px;
+        object-fit: cover; /* Better for blog images; contain for logos if needed */
+        border-radius: var(--radius-sm, 4px);
+        box-shadow: var(--shadow-sm);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        animation: slideEnhanced 12s infinite; /* Smoother animation for curiosity <grok:render card_id="ac13de" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">29</argument>
+        </grok:render> */
+        }
+        
+        .preview-image:nth-child(1) { animation-delay: 0s; }
+        .preview-image:nth-child(2) { animation-delay: 3s; }
+        .preview-image:nth-child(3) { animation-delay: 6s; }
+        .preview-image:nth-child(4) { animation-delay: 9s; }
+        
+        @keyframes slideEnhanced {
+        0% { opacity: 0; transform: translateX(100%) scale(0.9); }
+        8.33% { opacity: 1; transform: translateX(0) scale(1); }
+        25% { opacity: 1; transform: translateX(0) scale(1); }
+        33.33% { opacity: 0; transform: translateX(-100%) scale(0.9); }
+        100% { opacity: 0; transform: translateX(-100%) scale(0.9); }
+        }
+        
+        .preview-content {
+        flex: 1;
+        min-width: 120px;
+        }
+        
+        .preview-heading {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0 0 2px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Truncate for fixed height <grok:render card_id="909103" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        }
+        
+        .preview-sub {
+        font-size: 0.7rem;
+        color: #999;
+        }
+        
+        /* Responsive adjustments - Enhanced for mobile engagement <grok:render card_id="3e2c00" card_type="citation_card" type="render_inline_citation">
+        <argument name="citation_id">72</argument>
+        </grok:render> */
+        @media (max-width: 768px) {
+        .blogs-grid { gap: 16px; }
+        .blog-card { padding: 20px; height: auto; /* Allow flex on smaller screens */ }
+        .preview-window {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 8px;
+        }
+        .image-container, .preview-image { width: 100%; height: 120px; }
+        }
+        
+        @media (max-width: 480px) {
+        .blog-card { margin: 0 auto; max-width: 100%; }
+        .preview-window { padding: 8px; }
+        }
+
+        /* Specialization Grid */
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .specialization-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialization-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .specialization-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .specialization-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .specialization-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .specialization-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .specialization-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .specialization-code {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Semester Grid */
+        .semester-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .semester-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .semester-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .semester-icon {
+            font-size: 2rem;
+        }
+
+        .semester-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Subjects Grid */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .subject-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .subject-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .subject-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .subject-details {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .subject-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Units Grid */
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+    
+    
+    /* Notes Grid */
+/* Notes Grid (similar to course-grid for layout) */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid, like courses */
+    gap: 16px; /* Space between cards */
+    margin-bottom: 24px; /* Bottom margin for section spacing */
+}
+
+/* Note Card (similar to course-card for visual style) */
+.note-card {
+    background: var(--card-bg); /* Use the same gradient background as other cards */
+    border: 1px solid rgba(76, 175, 80, 0.1); /* Subtle green border for consistency */
+    border-radius: var(--radius-md); /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    box-shadow: var(--shadow-sm); /* Light shadow for depth */
+    transition: var(--transition); /* Smooth animations (from :root) */
+    cursor: pointer; /* Hand cursor on hover */
+    display: flex;
+    flex-direction: column; /* Stack icon and name vertically */
+    gap: 12px; /* Space between elements inside card */
+    position: relative; /* For pseudo-elements like hover bar */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Hover effect (copied from course-card for interactivity) */
+.note-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Top accent bar */
+    background: var(--primary); /* Blue accent */
+    transform: scaleX(0); /* Hidden initially */
+    transform-origin: left;
+    transition: transform 0.3s ease; /* Smooth reveal */
+}
+
+.note-card:hover {
+    transform: translateY(-4px); /* Slight lift on hover */
+    box-shadow: var(--shadow-md); /* Stronger shadow */
+}
+
+.note-card:hover::before {
+    transform: scaleX(1); /* Show accent bar */
+}
+
+/* Note Icon (similar to course-icon) */
+.note-icon {
+    font-size: 2rem; /* Large icon size */
+    margin-bottom: 8px; /* Space below icon */
+}
+
+/* Note Name (similar to course-name) */
+.note-name {
+    font-size: 1.1rem; /* Heading size */
+    font-weight: 600; /* Bold */
+    color: var(--text-primary); /* Theme-aware text color */
+}
+.note-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+
+#pdf-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+
+        .unit-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .unit-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .unit-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--bg-backbtn);
+            border: 1px solid rgba(36, 175, 80, 0.2);
+            
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);        
+            animation: pulse 25s ease-in-out infinite;
+            }
+            
+            @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.); opacity: 1; }
+            }
+
+        .back-button:hover {
+            background: var(--bg-tertiary);
+        border: 1px solid rgba(76, 175, 80, 0.1);
+        }
+        
+    
+        /* Quick Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .tool-card {
+            background: var(--tool-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .tool-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            
+            padding: 24px 16px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid var(--bg-tertiary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+        background: var(--card-bg);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(200, 200, 200, 0.4);
+        border-radius: 14px;
+        padding: 4px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--text);
+        transition: all 0.6s ease;
+        animation: pulse 4.2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.05); opacity: 1; }
+        }
+            
+
+        .theme-toggle:hover {
+            background: var(--bg-tertiary);
+        }
+
+.search-toggle {
+        background: var(--card-bg);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(200, 200, 200, 0.4);
+        border-radius: 14px;
+        padding: 4px 9px;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--text);
+        transition: all 0.6s ease;
+        animation: pulse 4.2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.05); opacity: 1; }
+        }
+            
+
+        .theme-toggle:hover {
+            background: var(--bg-tertiary);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--modalbc-bg);
+            backdrop-filter: blur(8px); 
+            border: 3px solid rgba(76, 175, 80, 0.1);
+            
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+            
+            }
+      
+        
+        
+
+        .modal-content {
+            background: var(--modal-bg);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .modal-close {
+            width: 25px;
+            height: 25px;
+            background: none;
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            font-size: 1.51rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--bg-tertiary);
+            
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            margin-bottom: 16px;
+        }
+
+        .modal-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .modal-list {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .modal-list li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        /* Legal Accordion Styles */
+        .legal-accordion {
+            margin-top: 16px;
+        }
+
+        .accordion-item {
+            margin-bottom: 8px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--bg-secondary);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 16px;
+            text-align: left;
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .accordion-header::after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 16px;
+            background: var(--legal-bg);
+            
+        }
+
+        .accordion-content.active {
+            max-height: 300px;
+            padding: 16px;
+            overflow-y: auto;
+        }
+
+        .accordion-content p {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .accordion-content h4 {
+            margin: 16px 0 8px;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Page Transitions */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Selection Prevention */
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .welcome-heading {
+                font-size: 1.5rem;
+            }
+            
+            .course-grid, .specialization-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .semester-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .subjects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-content {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 0 12px;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .main-content {
+                padding: 16px 12px;
+            }
+            
+            .semester-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Share Button and Menu */
+.share-toggle {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    border-radius: 14px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.6s ease;
+    animation: pulse 4.2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    }
+
+.share-toggle:hover {
+    background: var(--bg-tertiary);
+}
+
+.share-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modalbc-bg);
+    backdrop-filter: blur(8px); 
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.share-modal.active {
+    display: flex;
+}
+
+.share-content {
+    background: var(--modal-bg);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    max-width: 320px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.share-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.share-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.share-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.share-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.share-platforms {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--bg-tertiary);
+    
+    border: linear-gradient(135deg, #0f172a, #1e293f);
+    
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    justify-content: center;
+}
+
+.share-btn:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-1px);
+}
+
+.whatsapp { color: #25D366; }
+.telegram { color: #0088cc; }
+.facebook { color: #1877f2; }
+.twitter { color: #1DA1F2; }
+.native { background: var(--primary); color: white; }
+
+.native:hover { background: var(--primary-dark); }
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+    .share-content { padding: 16px; max-width: 90%; }
+}

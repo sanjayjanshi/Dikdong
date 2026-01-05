@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DBC.PharmaStudy Hub - Pharmacy Education Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index_style.css">
+        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/build/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/build/pdf.worker.min.js"></script>
+        
+        
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="logo" aria-label="PharmaStudy Hub Legal Information" onclick="showLegalModal()">
+            <div class="logo-icon">
+                <i class="fas fa-pills"></i>
+            </div>
+            <div>
+                <div class="logo-text">PharmaStudy Hub</div>
+                <div class="logo-subtext">DBC Pvt Ltd Narwana</div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="nav-container">
+        
+        <button class="search-toggle" onclick="window.location.href = 'search.html';" tabindex="0" role="button" aria-label=" ">
+        <i class="fas fa-search"></i>
+        </button>
+        
+    <button class="share-toggle" onclick="toggleShareMenu()" aria-label="Share PharmaStudy Hub">
+        <i class="fas fa-share-alt"></i>
+    </button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    
+    
+</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Welcome Section -->
+            <section class="welcome-section" aria-labelledby="welcome-heading">
+                <h1 id="welcome-heading" class="welcome-heading">Pharmacy Education Hub</h1>
+                <p class="welcome-subtitle">Select your course to access study materials for Kurukshetra University, Kurukshetra, I.P.S</p>
+            </section>
+
+            <!-- Course Selection -->
+            <section aria-labelledby="courses-heading">
+                <h2 id="courses-heading" class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Select Your Course
+                </h2>
+                
+                <div class="course-grid">
+                    <div class="course-card" onclick="showSemesters('bpharm')" tabindex="0" role="button" aria-label="Bachelor of Pharmacy program">
+                        <div class="course-icon">📘</div>
+                        <h3 class="course-name">B.Pharm (Bachelor of Pharmacy)</h3>
+                        <p class="course-desc">Comprehensive 4-year undergraduate program covering pharmaceutical sciences, pharmacology, and pharmacy practice.</p>
+                        <div class="course-stats">
+                            <span>8 Semesters</span>
+                            <span>42 Subjects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card" onclick="showSpecializations('mpharm')" tabindex="0" role="button" aria-label="Master of Pharmacy program">
+                        <div class="course-icon">🔬</div>
+                        <h3 class="course-name">M.Pharm (Master of Pharmacy)</h3>
+                        <p class="course-desc">Advanced 2-year postgraduate program with specializations in pharmaceutics, pharmacology, and medicinal chemistry.</p>
+                        <div class="course-stats">
+                            <span>4 Semesters</span>
+                            <span>24 Subjects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card" onclick="showSemesters('dpharm')" tabindex="0" role="button" aria-label="Diploma in Pharmacy program">
+                        <div class="course-icon">💊</div>
+                        <h3 class="course-name">D.Pharm (Diploma in Pharmacy)</h3>
+                        <p class="course-desc">2-year diploma program focusing on fundamental pharmacy knowledge and practical skills for pharmacy practice.</p>
+                        <div class="course-stats">
+                            <span>4 Semesters</span>
+                            <span>18 Subjects</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Blogs Section -->
+            <!-- Blogs Section -->
+            <section aria-labelledby="blogs-heading">
+            <h2 id="blogs-heading" class="section-title">
+            <i class="fas fa-blog"></i>
+            Pharmacy Blogs
+            </h2>
+            
+            <div class="blogs-grid">
+            <div class="blog-card" onclick="window.location.href = 'blogs.html';" tabindex="0" role="button" aria-label="Read latest pharmacy blogs">
+            <div class="blog-badge">Latest!</div>
+            <div class="blog-icon"><i class="fas fa-blog"></i></div>
+            <h3 class="blog-name">Read the Blogs</h3>
+            <p class="blog-desc">Latest Pharmacy Blogs, articles, and updates for students and professionals.</p>
+            <!-- Updated Preview Window -->
+            <div class="preview-window">
+            <div class="image-container">
+            <img src="blog.pic/1.jpg" alt="Blog Image 1" class="preview-image" onerror="this.src='https://via.placeholder.com/100x75?text=Image+1';">
+            <img src="blog.pic/2.jpg" alt="Blog Image 2" class="preview-image" onerror="this.src='https://via.placeholder.com/100x75?text=Image+2';">
+            <img src="blog.pic/3.jpg" alt="Blog Image 3" class="preview-image" onerror="this.src='https://via.placeholder.com/100x75?text=Image+3';">
+            <img src="blog.pic/4.jpg" alt="Blog Image 4" class="preview-image" onerror="this.src='https://via.placeholder.com/100x75?text=Image+4';">
+            </div>
+            <div class="preview-content">
+            <h4 class="preview-heading"><!-- kuchh bhi likh do yrr--></h4>
+            <p class="preview-sub"> <!-- kuchh bhi likh do yrr--></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>
+            
+            <!-- Quick Tools Section -->
+            <section aria-labelledby="tools-heading">
+                <h2 id="tools-heading" class="section-title">
+                    <i class="fas fa-tools"></i>
+                    Study Tools
+                </h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card" onclick="openTool('drug-interactions')" tabindex="0" role="button" aria-label="Drug Interactions Checker">
+                        <div class="tool-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="tool-name">Drug Interactions</div>
+                    </div>
+                    <div class="tool-card" onclick="openTool('formula-calculator')" tabindex="0" role="button" aria-label="Pharmacy Formula Calculator">
+                        <div class="tool-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="tool-name">Formula Calculator</div>
+                    </div>
+                    
+                    <div class="tool-card" onclick="openTool('community-forum')" tabindex="0" role="button" aria-label="Community Forum">
+                        <div class="tool-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="tool-name">Community Forum</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Specializations Page -->
+        <div id="specializations-page" class="page">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+                Back to Courses
+            </button>
+            
+            <h2 class="section-title" id="specialization-heading">
+                <i class="fas fa-star"></i>
+                Select Specialization
+            </h2>
+            
+            <div class="specialization-grid" id="specialization-container">
+                <!-- Specializations will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Semesters Page -->
+        <div id="semesters-page" class="page">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+                Back
+            </button>
+            
+            <h2 class="section-title" id="semester-heading">
+                <i class="fas fa-calendar-alt"></i>
+                Select Semester
+            </h2>
+            
+            <div class="semester-grid" id="semester-container">
+                <!-- Semesters will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Subjects Page -->
+        <div id="subjects-page" class="page">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+                Back to Semesters
+            </button>
+            
+            <h2 class="section-title" id="subject-heading">
+                <i class="fas fa-book"></i>
+                Select Subject
+            </h2>
+            
+            <div class="subjects-grid" id="subject-container">
+                <!-- Subjects will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Units Page -->
+        <div id="units-page" class="page">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+                Back to Subjects
+            </button>
+            
+            <h2 class="section-title" id="unit-heading">
+                <i class="fas fa-book-open"></i>
+                Subject Units
+            </h2>
+            
+            <div class="units-grid" id="unit-container">
+                <!-- Units will be dynamically inserted here -->
+            </div>
+        </div>
+        
+        <!-- Notes Selection Page -->
+<div id="notes-page" class="page">
+    <button class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+        Back to Units
+    </button>
+    <h2 class="section-title" id="notes-heading">
+        <i class="fas fa-file-pdf"></i>
+        Select Note Type
+    </h2>
+    <div class="notes-grid" id="notes-container">
+        <!-- Notes cards will be dynamically inserted here -->
+    </div>
+</div>
+        
+<!-- PDF Viewer Page -->
+<div id="pdf-viewer-page" class="page">
+    <button class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+        Back to Notes
+    </button>
+    <h2 class="section-title" id="pdf-heading">
+        <i class="fas fa-file-pdf"></i>
+        Viewing Note
+    </h2>
+   <div class="pdf-container" id="pdf-container">
+    <div id="pdf-canvas-container" style="width:100%; height:calc(100vh - 100px);"></div>
+</div> 
+</div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">PharmaStudy Hub</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                    Empowering pharmacy students with comprehensive learning resources and interactive tools with DBC Pvt Ltd Narwana.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title"><!-- Example combination icon -->
+                <span class="resource-icon">
+                <i class="fas fa-folder-open"></i>
+                <i class="fas fa-flask" style="position:absolute; font-size:0.6em; top:6px; left:10px; color:#34c759;"></i>
+                </span> Resources</h3>
+                <div class="footer-links">
+                    <a class="footer-link" onclick="showPaidModal()">▪️Study Materials</a>
+                    <a class="footer-link" onclick="showPaidModal()">▪️Practice Exams</a>
+                    <a class="footer-link" onclick="showPaidModal()">▪️Video Lectures</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title"><i class="fas fa-headset" style="color:; font-size:16px;"></i> Support </h3>
+                <div class="footer-links">
+                    <a class="footer-link" onclick="showHelpCenterModal()">▪️Help Center</a>
+                    <a class="footer-link" onclick="showContactModal()">▪️Contact Us</a>
+                    <a class="footer-link" onclick="showFeedbackModal()">▪️Feedback</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright" onclick="showLegalModal()">&copy; 2026 DBC PVT LTD Narwana. All Rights Reserved. <br>  Privacy Policy.<span style="margin-left: 15px;"></span>Terms & Conditons.<span style="margin-left: 15px;"></span>About-Us.</div>
+        </div>
+    </footer>
+
+    <!-- Under Development Modal -->
+    <style>
+  .modal-title {
+    color: #1877F2; /* blue color */
+  }
+</style>
+    <!-- Under Development Modal -->
+<div id="under-development-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Content Coming Soon...</h2>
+            <button class="modal-close" onclick="closeModal('under-development-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text">We're diligently working to bring you this content. Our team is crafting comprehensive, high-quality materials to enhance your learning experience.</p>
+            <p class="modal-text">Please check back soon as we continue to expand our resources. Thank you for your patience and understanding.</p>
+            <button class="back-button" onclick="closeModal('under-development-modal'); showContactModal()" style="margin-top: 16px;">
+                <i class="fas fa-envelope"></i>
+                Contact Us for Updates
+            </button>
+        </div>
+    </div>
+</div>
+
+    <!-- Legal Modal with Accordion -->
+    <div id="legal-modal" class="modal">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h2 class="modal-title">Legal Information <i class="fas fa-balance-scale"></i></h2>
+    <button class="modal-close" onclick="closeModal('legal-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+    <div class="legal-accordion">
+    <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">Terms and Conditions</button>
+    <div class="accordion-content">
+    <h4>CONTRACTUAL BINDING AGREEMENT</h4>
+    <p>This legal instrument("Agreement") is established between <b>🛡️DBC Pvt Ltd Narwana</b> a company incorporated under the Companies Act, 2013, with its registered office situated at Near Navdeep Stadium, Narwana, District Jind, Haryana, India, 126116 ("Company," "we," "us," "our") and you, the end user ("User," "you," "your"). By accessing, browsing, or using the web application located at ("PharmaStudy Hub" or the "Service"), you manifest your unequivocal and express acknowledgment that you have read, understood, and without any qualification or reservation, agree to be bound by all the terms, conditions, and notices contained herein. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICE AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
+    
+    <h4>DEFINITIONS AND THIRD-PARTY SERVICES</h4>
+    <p>The Service,including its backend architecture, functionality, and certain educational content, has been developed and is provided with the assistance of<b> VIDHI_PROJECTS Chandigarh</b> ("Third-Party Developer"), an independent entity. All content and services, regardless of origin, are presented under the auspices of and are the ultimate responsibility of 🛡️<b>DBC Pvt Ltd Narwana</b>. References to "the Service" include all elements provided by the Third-Party Developer.</p>
+    
+    <h4>MODIFICATION OF TERMS</h4>
+    <p>The Company reserves the unilateral right,at its sole and absolute discretion, to alter, amend, modify, or replace these Terms at any time without prior notice. The most current version of the Terms will supersede all previous versions. It is your sole and non-delegable responsibility to review these Terms periodically for any changes. Your continued use of the Service following the posting of any changes to the Terms constitutes your irrevocable acceptance of those changes.</p>
+    
+    <h4>INTELLECTUAL PROPERTY RIGHTS</h4>
+    <p>The Service,including but not limited to its original content, features, functionality, layout, design, graphics, compilation, and all other aspects (the "Proprietary Material"), are and shall remain the exclusive property of 🛡️</b>DBC Pvt Ltd Narwana and its licensors, including <b>VIDHI_PROJECTS Chandigarh</b>, who has provided certain licensed materials. The Service is protected by copyright, trademark, and other laws of both India and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of the Company. All rights not expressly granted herein are reserved.</p>
+    
+    <h4>USER CONDUCT AND RESTRICTIONS</h4>
+    <p>You are granted a limited,non-exclusive, non-transferable, and revocable license to use the Service for personal, non-commercial educational purposes. You expressly covenant and agree NOT to: a)Use the Service for any illegal or unauthorized purpose. b)Violate any laws in your jurisdiction (including but not limited to copyright laws). c)Attempt to interfere with, compromise the system integrity or security of, or decipher any transmissions to or from the servers running the Service. d)Use any robot, spider, scraper, or other automated means to access the Service for any purpose without our express written permission. e)Take any action that imposes, or may impose at our sole discretion an unreasonable or disproportionately large load on our infrastructure.</p>
+    
+    <h4>DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY</h4>
+    <p>THE SERVICE AND ALL INCLUDED CONTENT ARE PROVIDED BY THE COMPANY AND ITS THIRD-PARTY DEVELOPER ON AN"AS IS" AND "AS AVAILABLE" BASIS WITHOUT ANY WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE BY APPLICABLE LAW IN JIND, HARYANA, THE COMPANY AND VIDHI PROJECTS CHANDIGARH DISCLAIM ALL WARRANTIES, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    
+    <p>NEITHER THE COMPANY NOR VIDHI PROJECTS CHANDIGARH SHALL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES RESULTING FROM YOUR ACCESS TO OR USE OF, OR INABILITY TO ACCESS OR USE, THE SERVICE, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    
+    <h4>INDEMNIFICATION</h4>
+    <p>You hereby agree to indemnify,defend, and hold harmless DBC Pvt Ltd Narwana, Vidhi Projects Chandigarh, and their respective officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, debts, and expenses (including but not limited to attorney's fees) arising from: (i) your use of and access to the Service; (ii) your violation of any term of these Terms; or (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right.</p>
+    
+    <h4>GOVERNING LAW AND JURISDICTION</h4>
+    <p>This Agreement and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of India,without regard to its conflict of law provisions. You irrevocably consent to the exclusive jurisdiction and venue of the courts located in<b> Narwana, District Jind, Haryana, India</b>, for the resolution of any dispute, action, or proceeding arising out of or relating to this Agreement or your use of the Service.</p>
+    
+    <h4>SEVERABILITY</h4>
+    <p><b>If any provision of these Terms is held to be invalid,illegal, or unenforceable by a court of competent jurisdiction in Narwana, Jind, the remaining provisions of these Terms will remain in full force and effect.</b></p>
+    
+    <h4>CONTACT INFORMATION</h4>
+    <p>For any questions or notices regarding these Terms of Service,please contact us at:</p>
+    <p>For <b>DBC Pvt Ltd Narwana</b>:<br> Email:<a href="mailto:ask.sanjey@gmail.com">ask.sanjey@gmail.com</a> <br> Postal Address:DBC Pvt Ltd Narwana, Near Navdeep Stadium, Narwana, District Jind, Haryana, India - 126116.</p>
+    <p>For Third-Party Developer (<b>VIDHI_PROJECTS Chandigarh</b>):<br> Email:<a href="mailto:ask.vidhi.sharma@gmail.com">ask.vidhi.sharma@gmail.com</a></p>
+    </div>
+    </div>
+    
+    <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">Privacy Policy</button>
+    <div class="accordion-content">
+    <h4>INFORMATION WE COLLECT (NON-REGISTRATION)</h4>
+    <p>As this Service does not require login or signup,we do not collect personal information such as your name or email address directly. However, we may collect non-personal information automatically through your use of the Service, including:</p>
+    <p>· <b>Log Data</b>: Your IP address, browser type, operating system, the referring web page, pages visited, and search terms.</p>
+    <p>·<b> Device Information:</b> Information about the device you use to access the Service.</p>
+    <p>·<b> Cookies and Similar Technologies: </b>We use cookies to collect information about your browsing activities to analyze website traffic and improve user experience.</p>
+    
+    <h4>USE OF INFORMATION</h4>
+    <p>We use the collected non-personal information to:</p>
+    <p>· Analyze trends and administer the Service.</p>
+    <p>· Track users' movements around the Service.</p>
+    <p>· Gather demographic information about our user base as a whole.</p>
+    <p>· Improve the functionality and content of our Service.</p>
+    
+    <h4>DATA SHARING</h4>
+    
+    <p>We may share aggregated,non-personally identifiable information with third parties like <b>VIDHI_PROJECTS Chandigarh</b> for analytics and service improvement. We do not sell your data. We may disclose information if required by law.</p>
+    
+    <p><strong>Introduction.</strong> This Privacy Policy describes how we collect, use, disclose, and protect information obtained through this Service operated by <strong>DBC Pvt Ltd Narwana</strong>.</p>
+    
+    <p><strong>Information We Collect.</strong> We collect browser and device data (IP address, user agent, pages visited, search terms, timestamps), device details, and limited localStorage data such as theme preferences.</p>
+    
+    <p><strong>How We Use Data.</strong> Data is used to operate, maintain, secure, and improve the Service; analyze usage; detect abuse; and comply with legal obligations.</p>
+    
+    <p><strong>Legal Basis & Retention.</strong> Data is processed under legitimate interests or consent where required and retained as long as necessary for the purposes stated or as required by law.</p>
+    
+    <p><strong>Data Sharing.</strong> Data may be shared with trusted service providers and with <strong>VIDHI_PROJECTS Chandigarh</strong> for maintenance and analytics. We never sell personal data.</p>
+    
+    <p><strong>International Data Transfers.</strong> All primary data and servers are located in the <strong>Narwana Cloud Grid, District Jind, Haryana (India)</strong>. Cross-border transfers, if any, follow legal safeguards.</p>
+    
+    <p><strong>Security.</strong> Administrative, technical, and physical safeguards protect your data, though no system is perfectly secure.</p>
+    
+    <p><strong>Your Rights.</strong> You may request access, correction, or deletion of your information by contacting our Privacy Team at the emails below.</p>
+    
+    <p><strong>Children.</strong> This Service is not directed to children under 13 years. We do not knowingly collect their data.</p>
+    
+    <p><strong>Changes.</strong> Policy updates will appear here. Continued use after changes means you accept the updated Policy.</p>
+    
+    </div>
+    </div>
+    
+    <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">Copyright Policy</button>
+    <div class="accordion-content">
+    <p><b>DBC Pvt Ltd Narwana</b> respects intellectual property rights. All content, including that provided by <b>VIDHI_PROJECTS Chandigarh</b>, is either owned by us or licensed to us.</p>
+    <p>If you believe any content on the Service infringes your copyright, please provide our designated Copyright Agent with a written communication containing the specifics required under Indian copyright law to the contact information provided in the Terms and Conditions section.</p>
+    
+    <p>All operational data, logs, and backups for this Service are hosted on the <strong>Narwana Cloud Grid</strong> located in <strong>Narwana, District Jind, Haryana, India</strong>. Data is managed and handled jointly by DBC Pvt Ltd Narwana and VIDHI_PROJECTS Chandigarh in accordance with applicable Indian data-protection and IT-security regulations. Standard administrative and technical safeguards are applied to protect data integrity and confidentiality.</p>
+    
+    <p>Any data transfer outside India for analytics or infrastructure purposes will comply with governing legal requirements and ensure adequate protection measures.</p>
+    
+    </div>
+    </div>
+    
+    <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">Medical & Educational Disclaimer</button>
+    <div class="accordion-content">
+    <p>THE CONTENT PROVIDED ON PHARMASTUDY HUB, INCLUDING TEXT, GRAPHICS, IMAGES, QUIZZES, AND OTHER MATERIALS, IS FOR GENERAL INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY. IT IS NOT INTENDED TO BE A SUBSTITUTE FOR PROFESSIONAL MEDICAL ADVICE, DIAGNOSIS, OR TREATMENT. ALWAYS SEEK THE ADVICE OF A QUALIFIED PHYSICIAN OR OTHER APPROPRIATE HEALTH PROVIDER WITH ANY QUESTIONS YOU MAY HAVE REGARDING A MEDICAL CONDITION. NEVER DISREGARD PROFESSIONAL MEDICAL ADVICE OR DELAY IN SEEKING IT BECAUSE OF SOMETHING YOU HAVE READ ON THIS SERVICE.</p>
+    <p>THE COMPANY AND <b>VIDHI PROJECTS CHANDIGARH</b> EXPLICITLY DISCLAIM ANY LIABILITY FOR ANY ACTIONS TAKEN OR NOT TAKEN BASED ON THE CONTENT OF THIS SERVICE.</p>
+    </div>
+    </div>
+    
+    <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">About Us</button>
+    <div class="accordion-content">
+    <p><strong>DBC Pvt Ltd Narwana</strong> develops and operates the educational platform <strong>PharmaStudy Hub</strong> in partnership with <strong>VIDHI_PROJECTS Chandigarh</strong>. The platform provides curated study resources and intelligent tools for pharmacy students. All proprietary data, designs, and systems are owned or licensed by DBC Pvt Ltd Narwana. Contact emails are listed below.</p>
+    
+    
+    <h4>CONTACT INFORMATION</h4>
+    <p>For any questions or notices regarding these Terms of Service,please contact us at:</p>
+    <p>For <b>DBC Pvt Ltd Narwana</b>: <br>Email:<a href="mailto:ask.sanjey@gmail.com">ask.sanjey@gmail.com</a> <br> <b>Corporate Address</b> :DBC Pvt Ltd Narwana, Near Navdeep Stadium, Narwana, District Jind, Haryana, India - 126116.</p>
+    <p>For Third-Party Developer (<b>VIDHI_PROJECTS Chandigarh</b>):<br> Email:<a href="mailto:ask.vidhi.sharma@gmail.com">ask.vidhi.sharma@gmail.com</a></p>
+    
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+
+<!-- Contact Us Modal -->
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Contact Us</h2>
+            <button class="modal-close" onclick="closeModal('contact-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text">PharmaStudy Hub is developed in collaboration between DBC Pvt Ltd Narwana and Vidhi Projects Chandigarh.</p>
+            <p class="modal-text">For inquiries:</p>
+            <ul class="modal-list">
+                <li><i class="fas fa-envelope"></i> DBC Pvt Ltd Narwana: <br> <a href="mailto:ask.sanjey@gmail.com">ask.sanjey@gmail.com</a></li>
+                <li><i class="fas fa-envelope"></i> Vidhi Projects Chandigarh: <br> <a href="mailto:ask.vidhi.sharma@gmail.com">ask.vidhi.sharma@gmail.com</a></li>
+            </ul>
+            <p class="modal-text">Alternatively, contact us via WhatsApp, Instagram, or Telegram:</p>
+            <a href="https://wa.me/+919518442690?text=Hello%20👋%2C%20I%E2%80%99m%20a%20user%20of%20PharmaStudy%20Hub%20%E2%80%94%20of%20your-%20DBC%20Pvt%20Ltd%20Narwana.%0A%0AI%E2%80%99d%20like%20to%20connect%20regarding%3A%0A%E2%80%A2%20Help%20%26%20Support%20(issues%2C%20queries%2C%20or%20doubts)%20🆘%0A%E2%80%A2%20Feedback%20%26%20Suggestions%20to%20improve%20%F0%9F%92%A1%0A%E2%80%A2%20General%20Guidance%20or%20Other%20Assistance%20🤝%0A%0ALooking%20forward%20to%20your%20support.%20" target="_blank" aria-label="Contact via WhatsApp" style="font-size: 2rem; color: #25D366; text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://ig.me/m/sanjay.narwana?text=Hello%2C%20I%20have%20a%20query%20about%20PharmaStudy%20Hub." target="_blank" aria-label="Contact via Instagram" style="font-size: 2rem; color: #E1306C; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://t.me/DBCcontactus?text=Hello%2C%20I%20have%20a%20query%20about%20PharmaStudy%20Hub." target="_blank" aria-label="Contact via Telegram" style="font-size: 2rem; color: #0088cc; text-decoration: none;">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Paid Features Modal -->
+<div id="paid-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Premium Feature <i class="fas fa-gem"></i></h2>
+            <button class="modal-close" onclick="closeModal('paid-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text">This service is available only for our paid members, subscribers, or paid batch students.</p>
+            <p class="modal-text">If you want to access these functions, please contact us to subscribe or join a paid batch.</p>
+            <button class="back-button" onclick="closeModal('paid-modal'); showContactModal()" style="margin-top: 16px;">
+ <i class="fas fa-envelope"></i>
+                Contact Us for Subscription</button>
+             
+        </div>
+    </div>
+</div>
+    <!-- Help Center Modal -->
+<div id="help-center-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Help Center <i class="fas fa-info-circle"></i></h2>
+            <button class="modal-close" onclick="closeModal('help-center-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text">Welcome to the PharmaStudy Hub Help Center. Find answers to common questions, guides, and support resources here.</p>
+            <p class="modal-text">This section is under development. Please check back later or contact us for assistance.</p>
+ <button class="back-button" onclick="closeModal('help-center-modal'); showContactModal()" style="margin-top: 16px;">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Modal -->
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Feedback</h2>
+            <button class="modal-close" onclick="closeModal('feedback-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text">We value your feedback! Share your thoughts, suggestions, or issues to help us improve PharmaStudy Hub.</p>
+            <p class="modal-text">This section is under development. Please check back later or contact us to share your feedback.</p>
+ <button class="back-button" onclick="closeModal('feedback-modal'); showContactModal()" style="margin-top: 16px;">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Share Menu Modal -->
+<div id="share-modal" class="share-modal">
+    <div class="share-content">
+        <div class="share-header">
+            <h3 class="share-title"><i class="fas fa-share" style="color:#007BFF; font-size:14px;"></i> Share PharmaStudy Hub</h3>
+            <button class="share-close" onclick="closeShareMenu()">&times;</button>
+        </div>
+        <div class="share-body">
+            <p class="share-text">Empower a friend in pharmacy—unlock notes, tools, and study success together with DBC Pvt Ltd Narwana.</p>
+            <div class="share-platforms">
+                <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp(event)" aria-label="Share via WhatsApp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="#" class="share-btn telegram" onclick="shareTelegram(event)" aria-label="Share via Telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="#" class="share-btn facebook" onclick="shareFacebook(event)" aria-label="Share via Facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="#" class="share-btn twitter" onclick="shareTwitter(event)" aria-label="Share via Twitter/X">
+                    <i class="fab fa-twitter"></i> Twitter/X
+                </a>
+                <button class="share-btn native" onclick="shareNative()" aria-label="Share via device">
+                    <i class="fas fa-share"></i> More...
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="index_script.js"></script>
+</body>
+</html>     
